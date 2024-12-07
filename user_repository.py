@@ -27,7 +27,7 @@ class UserRepository():
         if new_user.get('id'):
             for current in self.users:
                 if new_user['id'] == current['id']:
-                    del current
+                    self.users.remove(current)
                     break
             self.users.append(new_user)
         # or add new
